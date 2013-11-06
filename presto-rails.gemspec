@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name        = 'presto-rails'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.executables << 'presto'
   s.date        = '2013-11-06'
   s.summary     = "presto-rails gem"
-  s.description = "Sets up a flatiron school stack rails application."
+  s.description = "Sets up a rails application using the default Flatiron School stack."
   s.authors     = ["Logan Hasson", "Josh Scaglione", "Manuel Neuhauser" ]
   s.email       = "teamevalruby@gmail.com"
   s.files       = Dir["{bin,lib,templates}/*"]
