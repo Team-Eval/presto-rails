@@ -13,6 +13,7 @@ gem_group :test, :development do
   gem 'guard-rspec'
 end
 
+system("bundle > /dev/null")
 # setup RSpec: rails g rspec:install
 generate(:"rspec:install")
 

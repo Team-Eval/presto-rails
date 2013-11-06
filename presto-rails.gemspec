@@ -7,10 +7,9 @@ Gem::Specification.new do |s|
   s.description = "Sets up a flatiron school stack rails application."
   s.authors     = ["Logan Hasson", "Josh Scaglione", "Manuel Neuhauser" ]
   s.email       = "teamevalruby@gmail.com"
-  s.files       = Dir["bin/*", "lib/template.rb"]
+  s.files       = Dir["{bin,lib,templates}/*"]
   s.homepage    =
     'http://rubygems.org/gems/presto-rails'
   s.license       = 'MIT'
-  s.add_runtime_dependency('rails')
-  s.add_runtime_dependency('trollop')
+  s.add_runtime_dependency('rails', '>= 4.0.0')
 end
