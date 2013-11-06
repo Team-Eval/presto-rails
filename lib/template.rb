@@ -55,7 +55,7 @@ File.open("spec/spec_helper.rb", "r+") do |f|
     end
   end
   f.pos = 0
-  f.print out
+  f.print out.chomp
   f.truncate(f.pos)
 end
 
@@ -63,16 +63,13 @@ end
 run('mkdir -p spec/features')
 
 # create feature_helper.rb
-file 'spec/feature_helper.rb', <<-CODE.strip_heredoc
+file 'spec/feature_helper.rb', <<-CODE.strip_heredoc.chomp
   require 'spec_helper'
   require 'capybara/rails'
 CODE
 
 # setup Guardfile
-file 'Guardfile', <<-CODE.gsub(/^ {2}/, '')
-  # A sample Guardfile
-  # More info at https://github.com/guard/guard#readme
-
+file 'Guardfile', %q(
   guard 'rails' do
     watch('Gemfile.lock')
     watch(%r{^(config|lib)/.*})
@@ -99,4 +96,4 @@ file 'Guardfile', <<-CODE.gsub(/^ {2}/, '')
     watch(%r{^spec/acceptance/(.+)\.feature$})
     watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
   end
-CODE
+).strip.gsub(/^ {2}/, '')
