@@ -126,3 +126,13 @@ guard 'rspec' do
 
 end
 ```
+
+###Authors
+[Manuel Neuhauser](http://manu3569.github.io)
+
+[Josh Scaglione](http://github.com/j-scag)
+
+[Logan Hasson](http://loganhasson.github.io)
+
+###License
+MIT
