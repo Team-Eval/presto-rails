@@ -62,6 +62,7 @@ end
 
 # make spec/features directory
 run('mkdir -p spec/features')
+run('touch spec/features/.keep')
 
 # create feature_helper.rb
 file 'spec/feature_helper.rb', <<-CODE.strip_heredoc.chomp
