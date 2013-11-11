@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'presto-rails'
-  s.version     = '0.0.3'
+  s.version     = '0.0.4'
   s.executables << 'presto'
   s.date        = '2013-11-06'
   s.summary     = "presto-rails gem"
