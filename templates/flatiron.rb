@@ -18,8 +18,23 @@ File.open("Gemfile", "r+") do |f|
   out = ""
   f.each do |line|
     if line =~ /gem 'turbolinks'/
-      # comment out turbolinks
+      # comment out turbolinks in gemfile
       out << "# #{line}"
+    else
+      out << line
+    end
+  end
+  f.pos = 0
+  f.print out.chomp
+  f.truncate(f.pos)
+end
+
+File.open("app/assets/javascripts/application.js", "r+") do |f|
+  out = ""
+  f.each do |line|
+    if line =~ /\/\/= require turbolinks/
+      # comment out turbolinks in application.js
+      out << "// require turbolinks\n"
     else
       out << line
     end
