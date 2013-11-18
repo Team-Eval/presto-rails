@@ -13,6 +13,22 @@ gem_group :test, :development do
   gem 'guard-rspec'
 end
 
+# disable turbolinks
+File.open("Gemfile", "r+") do |f|
+  out = ""
+  f.each do |line|
+    if line =~ /gem 'turbolinks'/
+      # comment out turbolinks
+      out << "# #{line}"
+    else
+      out << line
+    end
+  end
+  f.pos = 0
+  f.print out.chomp
+  f.truncate(f.pos)
+end
+
 system("bundle > /dev/null")
 # setup RSpec: rails g rspec:install
 generate(:"rspec:install")
