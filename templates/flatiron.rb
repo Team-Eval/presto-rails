@@ -69,6 +69,8 @@ File.open("spec/spec_helper.rb", "r+") do |f|
       # add Database Cleaner
       out << line
       out << <<-CODE.gsub(/^ {6}/, '')
+        config.include FactoryGirl::Syntax::Methods
+
         config.before(:suite) do
           DatabaseCleaner.strategy = :transaction
           DatabaseCleaner.clean_with(:truncation)
