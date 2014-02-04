@@ -132,3 +132,9 @@ file 'Guardfile', %q(
     watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
   end
 ).strip.gsub(/^ {2}/, '')
+
+# Rename README.rdoc to README.md, if found
+if File.exists?("#{ARGV[0]}/README.rdoc")
+  puts "Renaming README.rdoc to README.md..."
+  File.rename("#{ARGV[0]}/README.rdoc", "#{ARGV[0]}/README.md") 
+end
